@@ -154,6 +154,7 @@ def add_new_player_py(player_id, firstname, lastname):
     temp_sql = 'CALL add_new_player(\'%s\', \'%s\',\'%s\');' % (player_id, firstname, lastname, )
     try:
         cursor.execute(temp_sql)
+        conn.commit()
         # row = cursor.fetchone()
         rows = cursor.fetchall()
 
