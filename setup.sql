@@ -11,8 +11,10 @@ CREATE TABLE player (
     -- Unique player id
     player_id            CHAR(6),
     -- The player name, first and last.
-    firstname            VARCHAR(20) NOT NULL,
-    lastname             VARCHAR(20) NOT NULL,
+    firstname            VARCHAR(50) NOT NULL,
+    lastname             VARCHAR(50) NOT NULL,
+    wins                 INT DEFAULT 0,
+    losses               INT DEFAULT 0,
     PRIMARY KEY (player_id)
 );
 
@@ -53,7 +55,7 @@ CREATE TABLE tournament (
  */
 CREATE TABLE matches (
     -- The tournament id of the tournament in which match played
-    tournament_id      VARCHAR(10),
+    tournament_id      VARCHAR(50),
     -- The match number of each match being played in tournament
     match_num         INT,
     -- Player_id of the winning player
@@ -61,7 +63,7 @@ CREATE TABLE matches (
     -- Player_id of the losing player
     loser_id                CHAR(6) NOT NULL,
     -- The final score at the end of the match
-    final_score            VARCHAR(30) NOT NULL,
+    final_score            VARCHAR(40) NOT NULL,
     -- The duration of the match
     length_of_matches                INT DEFAULT NULL,
     -- The seeding of the winning player

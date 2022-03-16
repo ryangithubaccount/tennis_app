@@ -1,10 +1,11 @@
-LOAD DATA LOCAL INFILE './data/player_no_dob.csv' INTO TABLE player
-FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;
+LOAD DATA LOCAL INFILE './data/atp_players_temp_gone.csv' INTO TABLE player
+FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS
+(player_id, firstname, lastname);
 
 LOAD DATA LOCAL INFILE './data/tournament.csv' INTO TABLE tournament
 FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;
 
-LOAD DATA LOCAL INFILE './data/match.csv' INTO TABLE matches
+LOAD DATA LOCAL INFILE './data/match_filled.csv' INTO TABLE matches
 FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS
 SET winner_seed = NULLIF(winner_seed,''), loser_seed = NULLIF(loser_seed,'');
 
